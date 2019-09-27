@@ -8,12 +8,14 @@
 body {
   font-family: "Roboto Condensed", sans-serif;
   overflow-x: hidden;
-  /*max-width: 1000px;*/
+  /*max-width: 1500px;*/
+  min-width: 500px;
 }
 
 a {
   color: white;
   text-decoration: none;
+  padding-right: 1em;
 }
 
 a:hover {
@@ -32,17 +34,26 @@ header nav {
   font-size: 2em;
 }
 
-header nav ul {
-  margin-top: 0px;
+nav ul {
+  padding-left: var(--outer-margin);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #top-banner {
   background: var(--main-color);
   display: flex;
   justify-content: space-between;
-  justify-items: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  padding-left: var(--outer-margin);
+}
+#top-banner > div {
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+}
+#top-banner > div > img {
+  width: 100%;
 }
 
 .box {
@@ -50,7 +61,7 @@ header nav ul {
 }
 
 .headrule {
-  /*margin-left: var(--base-margin);*/
+  padding-left: var(--base-margin);
   font-size: calc(1.5vw + 1.5vh);
   background: var(--shade-color);
 }
@@ -66,7 +77,7 @@ header nav ul {
 
 .with-aside {
   /*margin: 1em;*/
-  align-items: justify;
+  align-items: flex-start;
 }
 
 .with-aside > .content {
@@ -76,11 +87,8 @@ header nav ul {
 }
 
 .with-aside > aside {
-  /*margin-top: var(--base-margin);*/
-}
-
-.aside img {
-  /*height: 100%;*/
+  position: sticky;
+  top: 0;
 }
 
 .art-item {
@@ -113,6 +121,7 @@ header nav ul {
   background: black;
   color: white;
   font-size: calc(0.9vw + 0.9vh);
+  line-height: calc(1.2 * (0.9vw + 0.9vh));
 }
 
 .hlntxt {
@@ -120,7 +129,8 @@ header nav ul {
 }
 
 #box2 .headline {
-  font-size: calc(1vw + 1.3vh);
+  font-size: calc(1.1vw + 1.3vh);
+  line-height: calc(1.6 * (1.1vw + 1.3vh));
 }
 
 .side-banner {
@@ -136,6 +146,7 @@ header nav ul {
 footer {
   background: black;
   color: white;
+  font-size: 1.7em;
 }
 
 #bottom-logo {
