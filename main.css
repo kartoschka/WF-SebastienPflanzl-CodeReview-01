@@ -7,6 +7,7 @@
 
 body {
   font-family: "Roboto Condensed", sans-serif;
+  overflow-x: hidden;
   /*max-width: 1000px;*/
 }
 
@@ -25,6 +26,10 @@ nav {
 
 nav li {
   display: inline-block;
+}
+
+header nav {
+  font-size: 2em;
 }
 
 header nav ul {
@@ -126,4 +131,13 @@ header nav ul {
 #middle-banner {
   display: flex;
   justify-content: center
+}
+
+footer {
+  background: black;
+  color: white;
+}
+
+#bottom-logo {
+  text-align: right;
 }
