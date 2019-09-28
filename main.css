@@ -1,6 +1,7 @@
 :root {
   --main-color: #591013; 
   --shade-color: #dedede;
+  --light-color: #eeeeee;
   --base-margin: 1vmax;
   --outer-margin: 2vmax;
 }
@@ -14,6 +15,12 @@ body {
 
 header {
   /*padding: var(--base-margin);*/
+}
+
+article {
+  /*padding: var(--base-margin);*/
+  margin: var(--base-margin);
+  background: var(--light-color);
 }
 
 nav a {
@@ -73,6 +80,17 @@ nav ul {
   padding-left: var(--base-margin);
   font-size: calc(1.5vw + 1.5vh);
   background: var(--shade-color);
+}
+
+article .headrule {
+  padding: 0;
+  margin-bottom: 1em;
+}
+
+article section {
+  padding: var(--base-margin);
+  font-size: 1.2rem;
+  text-align: justify;
 }
 
 .with-aside, .items-box {
@@ -175,6 +193,11 @@ footer {
   order: 4;
 }
 
+article {
+  
+}
+
+/* Mobile */
 @media only screen and (max-width: 480px) {
   .box {
     margin-right: 0;
