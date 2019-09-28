@@ -9,7 +9,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   overflow-x: hidden;
   /*max-width: 1500px;*/
-  /*min-width: 500px;*/
+  /*min-width: 350px;*/
 }
 
 header {
@@ -221,6 +221,16 @@ footer {
   .headline {
     font-size: calc(1.1vw + 1.3vh);
     line-height: calc(1.3 * (1.1vw + 1.3vh));
+  }
+
+  /* center the yellow banner thingy for fun and profit */
+  #yellow-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #yellow-banner img, #yellow-banner a {
+    width: 100%;
   }
 
   #middle-banner {
