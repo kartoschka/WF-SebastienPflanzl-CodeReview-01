@@ -75,11 +75,11 @@ nav ul {
   background: var(--shade-color);
 }
 
-.with-aside, .item-box {
+.with-aside, .items-box {
   display: flex;
 }
 
-.item-box {
+.items-box {
   flex: 1;
   justify-content: space-between;
 }
@@ -89,7 +89,7 @@ nav ul {
   align-items: flex-start;
 }
 
-.with-aside > .content {
+.content {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -170,8 +170,30 @@ footer {
   padding: var(--base-margin);
 }
 
+.banner-item {
+  display: none;
+  order: 4;
+}
+
 @media only screen and (max-width: 480px) {
   .daterule {
     display: none;
+  }
+  .banner-item {
+    margin-right: 0px;
+    margin-left: calc(2 * var(--base-margin));
+    display: block;
+  }
+  aside {
+    display: none;
+  }
+  .with-aside {
+    display: block;
+  }
+  .content {
+    display: block;
+  }
+  .items-box {
+    align-items: flex-start;
   }
 }
