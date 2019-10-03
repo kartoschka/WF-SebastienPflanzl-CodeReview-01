@@ -1,0 +1,224 @@
+$base-font: "Roboto Condensed", sans-serif
+$main-color: #591013 
+$shade-color: #dedede
+$light-color: #eeeeee
+
+$max-width: null
+$min-width: null
+$base-margin: 1vmax
+$outer-margin: 2vmax
+
+$big-flexible-fontsize: calc(1.5vw + 1.5vh)
+$biggish-flex-fontsize: calc(1.1vw + 1.3vh)
+$biggish-flex-lineheight: calc(1.3 * $biggish-flex-fontsize)
+$med-flexible-fontsize: calc(0.9vw + 0.9vh)
+$med-flexible-lineheight: calc(1.2 * $med-flexible-fontsize)
+
+@mixin fit-parent
+  width: 100%
+
+@mixin flex-vcenter
+  display: flex
+  align-items: center
+
+body
+  font-family: $base-font
+  overflow-x: hidden
+  max-width: $max-width
+  min-width: $min-width
+
+header
+  /*padding: $base-margin;*/
+
+article
+  /*padding: $base-margin;*/
+  margin: $base-margin
+  background: $light-color
+
+nav
+  background: black
+
+  ul
+    padding-left: $outer-margin
+    margin-top: 0
+    margin-bottom: 0
+
+header
+  nav
+    font-size: 2em
+
+    a
+      color: white
+      text-decoration: none
+      padding-right: 1em
+    a:hover
+      text-decoration: underline
+
+    li
+      display: inline-block
+
+#top-banner
+  @include flex-vcenter
+  justify-content: space-between
+  background: $main-color
+  padding-left: $outer-margin
+
+  &>div
+    @include flex-vcenter
+    flex-shrink: 1
+
+  img
+    @include fit-parent
+
+.box
+  margin: $outer-margin
+
+.daterule
+  text-align: right
+  margin-bottom: 0.5 * $base-margin
+
+article
+  .headrule
+    padding: 0
+    margin-bottom: 1em
+
+  section
+    padding: $base-margin
+    font-size: 1.2rem
+    text-align: justify
+
+.with-aside
+  display: flex
+  align-items: flex-start
+
+  &>aside
+    position: sticky
+    top: 0
+
+.content
+  display: flex
+  flex-direction: column
+  flex: 1
+
+.items-box
+  display: flex
+  flex: 1
+  justify-content: space-between
+
+.art-item
+  flex: 1
+  position: relative
+  margin: $base-margin
+  background: black
+
+  &:first-child
+    margin-left: 0
+
+  &:last-child
+    margin-right: 0
+
+  img
+    @include fit-parent
+
+.headrule
+  padding-left: $base-margin
+  font-size: $big-flexible-fontsize
+  background: $shade-color
+
+.headline
+  @include flex-vcenter
+  position: absolute
+  height: 40%
+  width: 100%
+  top: 60%
+  /*margin: 0px;*/
+  background: black
+  color: white
+  font-size: $med-flexible-fontsize
+  line-height: $med-flexible-lineheight
+
+.hlntxt
+  padding: calc(0.4vw + 0.4vh)
+
+#box2 .headline
+  font-size: $biggish-flex-fontsize
+  line-height: $biggish-flex-lineheight
+
+.side-banner
+  margin-top: $base-margin
+  margin-left: $base-margin
+
+#middle-banner
+  display: flex
+  justify-content: center
+
+footer
+  padding-top: $base-margin
+  background: black
+  color: white
+  font-size: 1.7em
+
+#bottom-logo
+  text-align: right
+  padding: $base-margin
+
+#copyright
+  font-size: 0.7em
+  text-align: center
+  padding: $base-margin
+
+.banner-item
+  display: none
+  order: 4
+
+
+// Mobile
+@media only screen and (max-width: 480px)
+  .box
+    margin-right: 0
+
+  .daterule
+    display: none
+
+  .banner-item
+    margin-right: 0px
+    margin-left: 2 * $base-margin
+    display: block
+
+  aside
+    display: none
+
+  .with-aside
+    display: block
+
+  .content
+    display: block
+
+  .items-box
+    align-items: flex-start
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 2*$base-margin
+    grid-auto-rows: 30vmin
+    margin-top: $base-margin
+    margin-bottom: 2*$base-margin
+
+  .art-item
+    margin: 0
+    overflow: hidden
+    height: 100% //restrict div height to grid row/grid cell height
+
+  .headline
+    font-size: $biggish-flex-fontsize
+    line-height: $biggish-flex-lineheight
+
+  // center the yellow banner thingy for fun and profit
+  #yellow-banner
+    @include flex-vcenter
+    justify-content: center
+
+  #yellow-banner img, #yellow-banner a
+    @include fit-parent
+
+  #middle-banner
+    display: none
